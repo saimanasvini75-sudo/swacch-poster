@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Swachh Pathakam Poster</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 0; }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      font-family: "Montserrat", sans-serif;
+      background: #121212;
+      color: #f1f1f1;
+    }
+    body {
+  margin: 0;
+  padding: 0;
+}
+.poster {
+  box-sizing: border-box;
+}
+
+
+    .poster {
+      width: 210mm;
+      height: 297mm;
+      box-sizing: border-box;
+      padding: 20mm;
+      background: linear-gradient(180deg, #1b5e20 0%, #2e7d32 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      color: #f1f1f1;
+    }
+
+    .leaf {
+      position: absolute;
+      opacity: 0.08;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .leaf.top-left { top: -40px; left: -40px; width: 220px; }
+    .leaf.bottom-right { bottom: -60px; right: -40px; width: 260px; transform: rotate(18deg); }
+
+    .banner {
+      width: 100%;
+      background: linear-gradient(90deg, #ff9800, #ffb74d);
+      color: #222;
+      padding: 18px;
+      border-radius: 14px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.45);
+      z-index: 2;
+    }
+    .banner h1 { margin: 0; font-size: 42px; font-weight: 700; }
+    .banner p { margin: 6px 0 0; font-weight: 500; font-size: 18px; color: rgba(0,0,0,0.75); }
+
+    .hero {
+      display: flex;
+      gap: 34px;
+      margin: 38px 0;
+      z-index: 2;
+    }
+
+    .circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    }
+    .circle.orange {
+      background: radial-gradient(circle at 25% 25%, #ffebc9 0%, #ffb74d 30%, #ff9800 70%);
+      border: 2px solid rgba(255,255,255,0.06);
+    }
+    .circle.green {
+      background: radial-gradient(circle at 25% 25%, #e8f5e9 0%, #81c784 30%, #4caf50 70%);
+      border: 2px solid rgba(255,255,255,0.06);
+    }
+    .circle.blue {
+      background: radial-gradient(circle at 25% 25%, #e1f5fe 0%, #81d4fa 30%, #29b6f6 70%);
+      border: 2px solid rgba(255,255,255,0.06);
+    }
+    .circle svg { width: 52px; height: 52px; display: block; }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 20px 0;
+      width: 100%;
+      max-width: 540px;
+      z-index: 2;
+    }
+    .card {
+      padding: 14px 16px;
+      border-radius: 10px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 15px;
+      color: #f1f1f1;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.55);
+      border-left: 6px solid transparent;
+    }
+    .card:nth-child(1) { border-left-color: #4caf50; background: rgba(76,175,80,0.18); }
+    .card:nth-child(2) { border-left-color: #ff9800; background: rgba(255,152,0,0.18); }
+    .card:nth-child(3) { border-left-color: #29b6f6; background: rgba(41,182,246,0.18); }
+    .card:nth-child(4) { border-left-color: #ab47bc; background: rgba(171,71,188,0.18); }
+
+    .quote {
+      margin: 30px 0;
+      padding: 18px 22px;
+      font-style: italic;
+      font-size: 17px;
+      border-radius: 8px;
+      max-width: 560px;
+      z-index: 2;
+      background: rgba(255, 235, 59, 0.18);
+      border-left: 6px solid #ffeb3b;
+      color: #fffde7;
+    }
+
+    .footer {
+      margin-top: 14px;
+      font-size: 14px;
+      color: #e8f5e9;
+      font-weight: 500;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cta {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1b3b00;
+      background: linear-gradient(90deg, #ffd54f, #ffb300);
+      padding: 16px 24px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+   .footer .details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: #fffde7;
+  font-size: 14px;
+}
+
+.footer .details .row {
+  display: flex;
+  gap: 24px;
+}
+
+.footer .details .info {
+  flex: 1; }
+
+.footer .details h5 {
+  margin: 0 0 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffd54f; 
+}
+
+.footer .details p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #f1f1f1;
+}
+
+.footer h3 {
+  margin: 12px 0 8px;
+  font-size: 16px;
+  color: #fffde7;
+  font-weight: 600;
+  text-align: center;
+}
+
+.footer .qr-code {
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin: 0 auto 20px;
+  border: 2px solid #ffd54f;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+
+   
+
+    @media print {
+      .card, .banner, .cta { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <div class="poster">
+
+    <svg class="leaf top-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#a5d6a7" aria-hidden="true">
+      <path d="M32 2C18 10 4 26 4 42c0 12 8 20 20 20 16 0 32-14 40-28C56 18 42 6 32 2z"/>
+    </svg>
+    <svg class="leaf bottom-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#81c784" aria-hidden="true">
+      <path d="M32 2C18 10 4 26 4 42c0 12 8 20 20 20 16 0 32-14 40-28C56 18 42 6 32 2z"/>
+    </svg>
+
+    <header class="banner">
+      <h1>Swachh Pathakam</h1>
+      <p>Cleaner • Greener • Healthier</p>
+    </header>
+
+    <div class="hero">
+  <div class="circle orange" aria-hidden="true">
+   
+     <span style="font-size: 48px;">🌳</span>   
+
+  </div>
+
+  <div class="circle green" aria-hidden="true">
+    <span style="font-size: 48px;">🧹</span>  </div>
+
+  <div class="circle blue" aria-hidden="true">
+    <span style="font-size: 48px;">♻️</span>
+  </div>
+</div>
+
+
+    <section class="actions" aria-label="Action points">
+      <div class="card">Segregate waste at home</div>
+      <div class="card">Plant and protect trees</div>
+      <div class="card">Join community clean-ups</div>
+      <div class="card">Reduce plastic use</div>
+    </section>
+
+    <blockquote class="quote">
+      “Cleanliness is not just hygiene, it’s dignity and respect for our planet.”
+    </blockquote>
+
+    <footer class="footer">
+     
+      <div class="cta">“Make a Difference Today 💚”</div>
+
+
+       <div class="details">
+  <div class="row">
+    <div class="info">
+      <h5>Name:</h5>
+      <p>K.Sai Manasvini.</p>
+    </div>
+    <div class="info">
+      <h5>Roll no.:</h5>
+      <p>2511CS010084.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="info">
+      <h5>Branch & Section:</h5>
+      <p>CSE-Alpha.</p>
+    </div>
+    <div class="info">
+      <h5>Year:</h5>
+      <p>B.Tech-1st year.</p>
+    </div>
+  </div>
+</div>
+<h3>Scan the QR code to see the HTML and CSS code for this poster!</h3>
+<img class="qr-code" src="swacch pathakam poster.jpg" alt="QR Code" />
+
+     
+    </footer>
+
+  </div>
+</body>
+</html>
